@@ -45,10 +45,12 @@ audioClick.addEventListener("click", () => {
     if (!clicked) {
 
         audio.play();
+        audioClick.textContent = "Play"
         clicked = true;
     }
     else {
         audio.pause();
+        audioClick.textContent = "Pause"
         clicked = false;
     }
 })
@@ -59,8 +61,8 @@ const audioVolume = (e) => {
 volume.addEventListener("input", audioVolume);
 
 let slider = document.querySelector("#rangeVolume")
-console.log(audio.duration);
-console.log(audio.currentTime);
+// console.log(audio.duration);
+// console.log(audio.currentTime);
 
 slider.addEventListener("change", () => {
     audio.currentTime = slider.value  / 100 * audio.duration;
